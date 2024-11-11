@@ -1,0 +1,704 @@
+/* ==================== Font ====================*/
+@font-face {
+    font-family: 'Lusitana';
+    src: url('fonts/Lusitana-Regular.woff2') format('woff2'),
+         url('fonts/Lusitana-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lusitana';
+    src: url('fonts/Lusitana-Bold.woff2') format('woff2'),
+         url('fonts/Lusitana-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+body, button, input, textarea {
+    font-family: 'Lusitana', serif; 
+}
+
+body{
+    background-color: #D4BEE4;
+    font-size:large;
+}
+
+p {
+    font-size:20px;
+}
+
+
+
+/* =======================  Navbar ======================*/
+/* Custom navbar styling */
+.navbar-custom {
+    background-color: #9B7EBD; /* Warna latar belakang navbar */
+    padding: 5px; /* Atur padding */
+    position: sticky; /* Membuat navbar stiky */
+    top: 0; /* Menetapkan navbar di atas halaman */
+    z-index: 1000; /* Pastikan navbar selalu di atas elemen lain */
+    width: 100%; /* Pastikan navbar mengisi lebar penuh */
+}
+
+.navbar-brand {
+    margin-right: 0; /* Hapus margin tambahan di kanan logo jika perlu */
+}
+
+.btn-outline {
+    color: black;
+    border-color: white;
+    background-color: #E5D9F2;
+    padding: 5px 5px; /* Tambah padding untuk memperbesar tombol */
+    margin: 0 2px; /* Tambahkan margin kecil antara tombol untuk spacing */
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Biarkan setiap tombol memanjang sesuai ruang yang tersedia */
+}
+
+/* Menambahkan lengkungan pada ujung tombol */
+.btn-group .btn:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Atur lebar tombol berdasarkan teks terpanjang */
+.btn-group {
+    display: flex;
+    width: 50%; /* Pastikan grup tombol mengambil lebar penuh */
+}
+
+.btn-group .btn {
+    flex: 1; /* Setiap tombol mengambil ruang yang sama dalam grup */
+    min-width: max-content; /* Memastikan lebar tombol mengikuti lebar teks terpanjang */
+    text-align: center;
+}
+
+.btn-outline:hover, .btn-outline:focus {
+    background-color: #d8cee3; /* Warna saat hover */
+    color: black;
+}
+
+.btn-outline.active {
+    background-color: #CDC1FF; /* Warna untuk item yang aktif */
+    color: black;
+    border-color: white;
+}
+
+.navbar-toggler {
+    border-color: white; /* Jaga konsistensi dengan tema */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Styling tambahan untuk responsive */
+@media (max-width: 991px) {
+    .btn-group {
+        width: 100%; /* Pastikan grup tombol mengambil lebar penuh */
+        justify-content: center; /* Menengahkan tombol */
+    }
+
+    .btn-outline {
+        border: none;
+        border-radius: 0;
+        width: 100%; /* Pastikan tombol memenuhi lebar penuh pada tampilan mobile */
+        text-align: center;
+    }
+}
+
+/* Tambahkan styling ini untuk mengurangi padding di sekitar container navbar */
+@media (min-width: 992px) {
+    .navbar .container {
+        padding: 0; /* Hapus padding internal */
+        max-width: 100%; /* Perbolehkan container mengambil lebar penuh */
+    }
+}
+
+
+
+
+/* =================== Footer ======================== */
+.footer-container { 
+    background-color: #9B7EBD; /* Background color */
+    color: black;/* Text color */
+    padding: 10px 30px; /* Adjust padding around content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Evenly space content */
+    flex-wrap: wrap;
+    font-size: 14px; /* Font size */
+    position: fixed; /* Fix position */
+    left: 0; /* Align left */
+    bottom: 0; /* Align bottom */
+    width: 100%; /* Full width */
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Shadow for a lifting effect */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%; /* Full width for alignment */
+}
+
+.footer-container h4{
+    align-items: center;
+    justify-content:flex-start; 
+    color: black;
+}
+.footer-logo {
+    width: 70px; /* Adjust logo size for better fit */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.social-media-icons {
+    display: flex; /* Layout icons in a row */
+    margin-left: 20px; /* Add some space before the icons start */
+}
+
+.social-icon img{
+    padding: 8px; /* Space around icons */
+    color: white; /* Icon color */
+    width: 40px; /* Adjust logo size for better fit */
+    height: auto; /* Maintain aspect ratio */
+    /* display: block; */
+}
+
+.footer-text {
+    text-align: center; /* Center the text */
+    margin: 0 15px; /* Adjust margin for text */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 20px; /* Increase padding for smaller screens */
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center; /* Center content on smaller screens */
+    }
+
+    .social-media-icons {
+        justify-content: center; /* Center icons */
+        margin-top: 10px; /* Extra space above icons */
+    }
+
+    .footer-text {
+        margin-top: 5px; /* Adjust spacing */
+    }
+}
+
+/* Ensure content does not hide behind the footer */
+.body-content {
+    padding-bottom: 80px; /* Adjust based on footer height */
+}
+
+
+
+
+
+
+
+/* =================== Welcome card ======================= */
+.unixni-welcome-card {
+    background-color: #CDC1FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center; /* Akan vertikal menengah semua konten */
+    justify-content: space-between; /* Menjaga ruang antar item */
+    color: black;
+    text-align: left; /* Sesuaikan teks ke kiri */
+}
+
+.unixni-welcome-card p {
+    font-style: italic;
+}
+
+
+.unixni-welcome-card h1 {
+    font-weight: bold;
+}
+.unixni-welcome-card .text-content {
+    flex: 1; /* Mengambil ruang yang tersedia */
+    margin-right: 20px; /* Memberi ruang antara teks dan gambar */
+}
+
+.unixni-welcome-card .image-content {
+    flex: 1; /* Mengambil ruang yang tersedia */
+    display: flex;
+    justify-content: flex-end; /* Menyelaraskan gambar ke kanan */
+}
+
+.unixni-welcome-card img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi area yang diberikan */
+    height: auto; /* Pertahankan aspek rasio */
+}
+
+.unixni-welcome-card .btn {
+    background-color: #3B1E54; /* Warna background tombol */
+    color: white; /* Warna teks */
+    border: none; /* Hapus border */
+    padding: 10px 20px; /* Padding */
+    text-decoration: none; /* Hapus garis bawah teks */
+    transition: background-color 0.3s ease; /* Transisi warna saat hover */
+    margin-bottom: 30px;
+}
+
+.unixni-welcome-card .btn-custom:hover {
+    background-color: #9B7EBD; /* Warna saat hover */
+    color: black; /* Warna teks saat hover */
+}
+
+@media (max-width: 768px) {
+    .unixni-welcome-card {
+        flex-direction: column; /* Tumpuk vertikal pada layar kecil */
+        text-align: center; /* Teks ditengah pada layar kecil */
+    }
+
+    .unixni-welcome-card .text-content, .unixni-welcome-card .image-content {
+        flex: none; /* Batalkan pengaturan flex sebelumnya */
+        width: 100%; /* Mengambil lebar penuh */
+        margin-right: 0; /* Hapus margin kanan */
+    }
+
+    .unixni-welcome-card img {
+        max-width: 80%; /* Ukuran gambar yang lebih kecil pada layar kecil */
+        margin: 0 auto; /* Tengahkan gambar */
+    }
+}
+
+
+
+/* =================== Nilai Perusahaan ======================= */
+.nilai-perusahaan-container .text-center {
+    background-color: #9B7EBD;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.nilai-perusahaan-container h2 {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nilai-perusahaan-container p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.nilai-perusahaan-container .row {
+    display: flex;
+    flex-wrap: wrap; /* Memungkinkan items untuk wrap jika tidak muat */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nilai-perusahaan-container .col {
+    text-align: center;
+    flex-basis: 16%; /* Akan menyesuaikan pada layar besar */
+    margin-bottom: 20px; /* Menambahkan jarak antar item */
+}
+
+.nilai-perusahaan-container .col span {
+    display: inline-block;
+    background-color: #9B7EBD;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nilai-perusahaan-container .col p {
+    font-style: normal;
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Media Query untuk layar kecil */
+@media (max-width: 768px) {
+    .nilai-perusahaan-container .row {
+        justify-content: center; /* Tengahkan items di mobile */
+    }
+
+    .nilai-perusahaan-container .col {
+        flex-basis: 100%; /* Setiap kolom mengambil penuh lebar kontainer */
+        margin-bottom: 10px; /* Kurangi jarak bawah untuk lebih hemat ruang */
+    }
+
+    .nilai-perusahaan-container .col span {
+        width: 50px; /* Lebar lingkaran lebih kecil */
+        height: 50px; /* Tinggi lingkaran lebih kecil */
+        line-height: 50px; /* Sesuaikan line height */
+    }
+
+    .nilai-perusahaan-container .col p {
+        font-size: 12px; /* Ukuran font lebih kecil untuk deskripsi */
+    }
+}
+
+
+
+
+
+/* =================== Mitra ======================= */
+.trusted-brands-carousel h2 {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.trusted-brands-carousel {
+    width: 90%; /* Menyesuaikan lebar container atau halaman */
+    margin: auto; /* Menambahkan margin auto untuk memusatkan carousel */
+    padding: 20px; /* Menambahkan padding secara seimbang di semua sisi */
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+}
+
+.carousel-inner {
+    display: flex; /* Menggunakan flexbox untuk menyusun logo */
+    justify-content: space-between; /* Membuat jarak yang sama antar logo */
+    align-items: center; /* Menyelaraskan logo secara vertikal */
+}
+
+.carousel-item.active {
+    display: flex; /* Gunakan flex juga di sini untuk menjaga item dalam satu baris */
+    flex-wrap: nowrap; /* Pastikan semua logo ada dalam satu baris tanpa wrap */
+    justify-content: center; /* Menyelaraskan logo-logo ke tengah secara horizontal */
+}
+
+.carousel-item img {
+    flex: none; /* Menghilangkan flex agar ukuran gambar lebih konsisten */
+    height: 80px; 
+    width: 80px; 
+    object-fit: fill; /* Mengisi area tanpa mempertahankan rasio aspek */
+    margin: 0 20px; /* Menambahkan margin horizontal yang lebih besar antar logo */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam width dan height */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 30px; /* Lebar kontrol yang lebih kecil */
+    top: 50%; /* Posisi vertikal tengah */
+    transform: translateY(-50%); /* Pusatkan kontrol secara vertikal */
+    z-index: 5; /* Pastikan kontrol ada di atas semua elemen */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Tambahkan background untuk visibilitas yang lebih baik */
+    border-radius: 50%; /* Bentuk lingkaran */
+    padding: 10px; /* Padding untuk icon */
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .trusted-brands-carousel,
+    .carousel-inner,
+    .carousel-item {
+        width: 100%; /* Atur ulang lebar untuk full width */
+        flex-direction: column; /* Tumpuk elemen secara vertikal */
+        align-items: center; /* Pusatkan elemen */
+        margin: 10px;
+    }
+
+    .carousel-item img {
+        height: 30px; /* Sesuaikan tinggi gambar */
+        width: 30px; /* Sesuaikan lebar gambar */
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        top: 40%; /* Penyesuaian posisi lebih rendah untuk visibilitas */
+    }
+}
+
+
+
+
+/* ============================= Testimoni ============================== */
+.container-testimoni-unik h2 {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container-testimoni-unik {
+    padding: 20px; /* Padding sekitar karusel */
+    margin: auto; /* Pusatkan wadah */
+    max-width: 1200px; /* Lebar maksimum untuk layar besar */
+    width: auto; /* Memungkinkan wadah menyesuaikan atau memperluas berdasarkan konten */
+    display: flex; /* Tampilan flex untuk memusatkan konten secara vertikal dan horizontal */
+    flex-direction: column; /* Susun elemen anak secara vertikal */
+    align-items: center; /* Pusatkan anak-anak secara horizontal */
+}
+
+.container-testimoni-unik .carousel-inner {
+    background-color: transparent; /* Latar belakang bening di dalam karusel */
+    padding: 10px 0; /* Padding atas dan bawah */
+    width: 100%; /* Lebar penuh untuk memuat semua item dengan baik */
+}
+
+.container-testimoni-unik .testimonial,
+.container-testimoni-unik .profil-testimoni {
+    padding: 10px;
+    background-color: #9B7EBD; /* Latar belakang ungu muda untuk testimoni */
+    border-radius: 10px;
+    margin: 2px auto; /* Margin tengah untuk penyesuaian otomatis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: fit-content; /* Sesuaikan lebar agar pas dengan konten */
+    min-width: 300px; /* Lebar minimum untuk menjaga estetika */
+    display: flex; /* Gunakan flexbox untuk penyelarasan internal */
+    flex-direction: column; /* Susun elemen secara vertikal */
+    align-items: center; /* Pusatkan konten secara horizontal */
+    text-align: center; /* Teks rata tengah */
+}
+
+.container-testimoni-unik .gambar-testimoni {
+    width: 30px; /* Ukuran disesuaikan untuk visibilitas yang lebih baik */
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px; /* Ruang di bawah gambar */
+}
+
+.container-testimoni-unik .nama-testimoni {
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    margin-top: 5px; /* Ruang di atas nama */
+}
+
+.container-testimoni-unik .carousel-control-prev,
+.container-testimoni-unik .carousel-control-next {
+    position: absolute;
+    top: 50%; /* Menempatkan kontrol pada pertengahan tinggi karusel */
+    transform: translateY(-50%); /* Mengalihkan kontrol ke tengah secara vertikal */
+    width: 30px; /* Lebar ikon kontrol */
+    height: 30px; /* Tinggi ikon kontrol */
+    z-index: 5; /* Pastikan kontrol muncul di atas item-item karusel */
+}
+
+.container-testimoni-unik .carousel-control-prev {
+    left: 10px; /* Menggeser kontrol ke kiri, tetapi tidak terlalu jauh ke ujung */
+}
+
+.container-testimoni-unik .carousel-control-next {
+    right: 10px; /* Menggeser kontrol ke kanan, tetapi tidak terlalu jauh ke ujung */
+}
+
+.container-testimoni-unik .carousel-control-prev-icon,
+.container-testimoni-unik .carousel-control-next-icon {
+    background-color: #6A0DAD; /* Warna latar belakang ikon */
+    border-radius: 50%; /* Membuat ikon bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 50%; /* Menyesuaikan ukuran background ikon agar tidak terlalu besar */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Pertimbangan Desain Responsif */
+@media (max-width: 850px) {
+    .container-testimoni-unik {
+        padding: 10px; /* Kurangi padding untuk layar kecil */
+    }
+    .container-testimoni-unik .carousel-inner {
+        padding: 10px 0; /* Padding minimal atas dan bawah */
+    }
+    .container-testimoni-unik .testimonial,
+    .container-testimoni-unik .profil-testimoni {
+        min-width: 100%; /* Testimoni mengambil lebar penuh pada layar kecil */
+        padding: 10px 5px; /* Sesuaikan padding */
+    }
+    .container-testimoni-unik .gambar-testimoni {
+        width: 30px; /* Ukuran gambar lebih kecil */
+        height: 30px;
+    }
+    .container-testimoni-unik .nama-testimoni {
+        font-size: 15px; /* Ukuran font lebih kecil untuk nama */
+        margin-top: 3px; /* Ruang atas nama yang dikurangi */
+    }
+}
+
+
+/* ============================= FAQ ========================= */
+/* Gaya untuk Bagian FAQ */
+.faq-container {
+    max-width: 100%;
+    background-color: #CDC1FF; /* Warna latar belakang untuk FAQ */
+    padding: 20px; /* Padding sekitar konten FAQ */
+    border-radius: 8px; /* Bulatkan sudut kontainer */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan ringan untuk kedalaman */
+    margin-top: 20px; /* Jarak dari elemen di atas */
+}
+
+.faq-container h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.faq-container .accordion-button {
+    background-color: #CDC1FF; /* Warna latar tombol ketika tertutup */
+    color: #495057; /* Warna teks tombol */
+    font-weight: bold; /* Menebalkan font tombol */
+}
+
+.faq-container .accordion-button.collapsed {
+    background-color: #CDC1FF; /* Warna latar tombol ketika terbuka */
+    color: black; /* Warna teks tombol ketika tertutup */
+}
+
+.faq-container .accordion-body {
+    background-color: #fff; /* Warna latar untuk teks jawaban */
+    color: #666; /* Warna teks jawaban */
+    border-top: 1px solid #dee2e6; /* Garis pemisah antara tombol dan teks jawaban */
+    padding: 15px; /* Padding untuk teks jawaban */
+    
+}
+
+.faq-container .accordion-item {
+    border: none; /* Menghapus border bawaan */
+}
+
+
+
+/* =========================== Tentang Kami =====================  */
+
+
+/* Gaya untuk halaman Tentang Kami */
+.about-container {
+    padding: 30px;
+    margin-top: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 60px;
+   
+}
+
+.about-title {
+    color: #000000; /* Warna judul */
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 15px; /* Spasi di bawah judul */
+}
+
+.about-description {
+    color: black; /* Warna deskripsi */
+    font-size: 20px;
+    margin-bottom: 20px; /* Spasi di bawah deskripsi */
+}
+
+.about-intro {
+    font-size: 18px;
+    line-height: 1.6; /* Jarak antar baris */
+    color: black; /* Warna teks */
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+}
+
+.about-card {
+    background-color: #9B7EBD; /* Warna latar belakang */
+    padding: 10px; /* Padding sekitar */
+    border-radius: 20px; /* Bulatkan sudut kontainer */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan ringan untuk kedalaman */
+    margin: 10px; /* Menambahkan margin antar kartu */
+    min-width: 250px; /* Menetapkan lebar minimum untuk kartu */
+    word-wrap: break-word; /* Memastikan teks tidak meluap keluar batas */
+    font-size: 20px;
+
+
+}
+
+.about-heading {
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px; /* Spasi di atas setiap subjudul */
+}
+
+.about-mission,
+.about-motto,
+.about-advantages {
+    font-size: 20px;
+    color: #212529; /* Warna teks */
+    margin-top: 20px;
+    margin-bottom: 10px; /* Spasi di bawah paragraf */
+}
+
+.about-adv {
+    font-size: 20px;
+    color: #212529; /* Warna teks */
+    margin-top: 20px;
+    margin-bottom: 80px; /* Spasi di bawah paragraf */
+}
+
+.about-structur{
+    padding-left: 100px;
+    margin-right: 100px;
+}
+
+
+.about-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0;
+}
+
+.about-list li {
+    padding-left: 20px;
+    text-indent: -20px; /* Teknik untuk membuat bullet custom */
+    margin-bottom: 5px; /* Spasi antar item */
+}
+
+.about-list li:before {
+    content: "•"; /* Bullet custom */
+    color: #6A0DAD; /* Warna bullet */
+    display: inline-block;
+    width: 20px; /* Lebar area bullet */
+}
+
+.about-image {
+    width: 100%; /* Lebar penuh */
+    height: auto; /* Tinggi otomatis */
+    margin-top: 15px; /* Spasi di atas gambar */
+}
+
+.about-info {
+    font-size: 14px;
+    color: #343a40; /* Warna teks */
+    margin-bottom: 20px; /* Spasi di bawah teks */
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .about-heading {
+        font-size: 16px;
+    }
+
+    .about-description,
+    .about-mission,
+    .about-motto,
+    .about-advantages,
+    .about-info {
+        font-size: 12px;
+    }
+}
