@@ -1,6 +1,6 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-    <div class="container">
+    <div class="container" style="width: 95%;">
         <!-- Logo on the left -->
         <a class="navbar-brand" href="{% url 'homepage' %}">
             <img src="{% static 'images/icon/unixni.png' %}" alt="UnixNi Logo" height="30"> 
@@ -13,10 +13,10 @@
             <div class="btn-group ms-auto" role="group" aria-label="Basic example">
                 <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'homepage' %}active{% endif %}" href="{% url 'homepage' %}">Beranda</a>
                 <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">Tentang Kami</a>
-                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == '#' %}active{% endif %}" href="{% url 'homepage' %}">Tim</a>
-                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == '#' %}active{% endif %}" href="{% url 'homepage' %}">Galeri</a>
-                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == '#' %}active{% endif %}" href="{% url 'homepage' %}">Blog</a>
-                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == '#' %}active{% endif %}" href="{% url 'homepage' %}">Kontak</a>
+                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'tim' %}active{% endif %}" href="{% url 'tim' %}">Tim</a>
+                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'galeri' %}active{% endif %}" href="{% url 'galeri' %}">Galeri</a>
+                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}" href="{% url 'blog' %}">Blog</a>
+                <a class="btn btn-outline nav-link {% if request.resolver_match.url_name == 'kontak' %}active{% endif %}" href="{% url 'kontak' %}">Kontak</a>
             </div>
         </div>
     </div>

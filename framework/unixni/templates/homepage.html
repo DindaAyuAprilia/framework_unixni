@@ -15,14 +15,14 @@
     {% block content %}
 
     <!-- Welcome Card -->
-    <div class="unixni-welcome-card mt-5 text-center d-flex align-items-center">
+    <div class="unixni-welcome-card text-center d-flex align-items-center custom-padding">
         {% for card in welcome_cards %}
             <div class="text-content">
                 <h1>{{ card.title }}</h1>
                 <p>"{{ card.description }}"</p>
                 <a href="#" class="btn btn-custom">Selengkapnya</a>
             </div>
-            <div class="image-content">
+            <div class="image-content custom-padding">
                 <img src="{{ card.image.url }}" alt="{{ card.title }}" style="width: 100%; height: auto;">
             </div>
         {% endfor %}
@@ -30,22 +30,24 @@
     
 
     <!-- Nilai Perusahaan -->
-    <div class="nilai-perusahaan-container my-5 text-center">
-        <h2>{{ company_profile.title1 }}</h2>
-        <p>{{ company_profile.subtitle }}</p>
-        <div class="row">
-            {% for value in company_values %}
-            <div class="col">
-                <span>{{ value.abbreviation }}</span>
-                <p>{{ value.description }}</p>
+    <div class="nilai-perusahaan-container text-center custom-padding" style="padding-top: 30px;">
+        <h2 class="mt-3">{{ company_profile.title1 }}</h2>
+        <p class="mt-2">{{ company_profile.subtitle }}</p>
+        <div class="container align-items-center custom-padding ">
+            <div class="row ">
+                {% for value in company_values %}
+                <div class="col">
+                    <span class="circle">{{ value.abbreviation }}</span>
+                    <p>{{ value.description }}</p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 
 
     <!-- Telah Dipercaya Oleh -->
-    <div class="trusted-brands-carousel text-center">
+    <div class="trusted-brands-carousel text-center" style="padding-top: 30px;padding-bottom: 0px;">
         <h2>{{ company_profile.title2 }}</h2>
         <div id="trustedCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
             <div class="carousel-inner">
@@ -74,12 +76,12 @@
 
 
     <!-- Testimoni Carousel -->
-    <div class="container-testimoni-unik">
+    <div class="container-testimoni-unik custom-padding" style="padding-top: 0px;">
         <h2>{{ company_profile.title3 }}</h2>
         <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
             
             <!-- Carousel inner container for testimonial items -->
-            <div class="carousel-inner">
+            <div class="carousel-inner custom-padding">
                 {% for group in grouped_testimonials %}
                 <div class="carousel-item{% if forloop.first %} active{% endif %}">
                     <div class="row">
@@ -115,26 +117,27 @@
 
 
 
-    <!-- FAQ Section -->
-<div class="container my-5 faq-container">
-    <h2 class="text-center">{{ company_profile.title4 }}</h2>
-    <div class="accordion" id="faqAccordion">
-        {% for faq in faqs %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}">
-                    {{ faq.question }}
-                </button>
-            </h2>
-            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse{% if forloop.first %} show{% endif %}" aria-labelledby="heading{{ forloop.counter }}">
-                <div class="accordion-body">
-                    {{ faq.answer }}
+   <!-- FAQ Section -->
+    <div class="container faq-container">
+        <h2 class="text-center">{{ company_profile.title4 }}</h2>
+        <div class="accordion" id="faqAccordion">
+            {% for faq in faqs %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true">
+                        {{ faq.question }}
+                    </button>
+                </h2>
+                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse{% if forloop.first %} show{% endif %}" aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="accordion-body">
+                        {{ faq.answer }}
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+
 
 
     <!-- Include Footer -->

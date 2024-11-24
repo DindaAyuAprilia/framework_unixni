@@ -5,3 +5,4 @@ from .home.beranda import TrustedBrand
 from .home.beranda import Testimonial
 from .home.beranda import FAQ
 from .home.about import About
+from .home.tim import Tim
